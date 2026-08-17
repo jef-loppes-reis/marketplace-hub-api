@@ -1,5 +1,4 @@
-from pydantic_settings import BaseSettings
-from sqlalchemy.ext.declarative import declarative_base
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -12,11 +11,11 @@ class Settings(BaseSettings):
     """    
 
     API_V1_STR: str = '/api/v1'
-    DB_URL: str = 'postgresql+asyncpg://postgres:1433@localhost:5432/fastapi'
-    DBBaseModel = declarative_base()
+    DB_URL: str = 'postgresql+asyncpg://postgres:meupg1433@localhost:5432/marketplacehubapi'
 
-    class Config:
+    model_config = SettingsConfigDict(
         case_sensitive = True
+    )
 
 
-settings = Settings()
+settings: Settings = Settings()
