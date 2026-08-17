@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from marketplace-hub-api!")
+from marketplace_hub_api import *
